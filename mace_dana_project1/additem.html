@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<!-- Dana Mace
+VFW Term 1301
+Project 1
+January 10, 2013
+Add Item HTML Page -->
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="See the glass half full.  Keep track of what you're grateful for on a daily basis.  Make the world a better place, one thought at a time." />
+        <meta name="keywords" content="Gratitude, Journal, Grateful, Happy, Mobile" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <title>An Attitude of Gratitude Journal</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+<!-- HEADER -->
+
+        <header>
+            <h1>An Attitude of Gratitude Journal</h1>
+        </header>
+        <nav class="cf">
+        <ul>
+            <li><a href="#" id="clearGrat">Clear Gratitudes</a></li>
+            <li><a href="#" id="displayGrat">Display Gratitudes</a></li><br>
+            <li><a href="index.html" id="addNewGrat" style="display:none;">Add New Gratitude</a></li>
+        </ul>
+        </nav>
+
+<!-- FORM STARTS HERE -->
+
+        <form action="#" method="post" id="gratitudeForm">
+            
+            <span>* fields are required</span>
+              
+<!-- Date of gratitude -->
+
+            <fieldset id=gratitudeFieldset>
+                <legend>Date & Time</legend>
+                <ul id="errors"></ul>
+                <ul id="journal">
+                    <li><label for="date">* Date:<label><input type="date" value="mmddyyyy" id="date" /></li><br>
+                    <li><label for="time">  Time:</label><input type="text" id="time" /></li>
+                </ul>
+            </fieldset>
+    
+<!-- What's Your "Attitude of Gratitude" -->
+
+            <fieldset id=gratFieldset>
+                <legend>My attitude of gratitude</legend>
+                <ul>
+                    <li><label for="what">* What I'm grateful for:</label><br>
+                    <textarea rows="5" cols="50" id="gratitude"></textarea></li>
+                </ul>
+            </fieldset>
+
+<!-- Why? -->
+
+            <fieldset id=why>
+                <legend>Is there a story behind this?</legend>
+                <ul>
+                    <li><label for="why">I have an attitude of gratitude because:</label><br>
+                    <textarea rows="15" cols="50" id="gratStory"></textarea></li>
+                </ul>
+            </fieldset>
+
+<!-- CHOOSE THE COLOR THAT YOU LIKE BEST TODAY -->
+
+            <fieldset id=colorChoice>
+                <legend>What color do you like best today?</legend>
+                <ul>
+                    <li id="colors"><label name="Colors" for="Colors"></label></li>
+                </ul>
+            </fieldset>
+
+<!-- CHOOSE WHAT MAKES YOU HAPPY -->
+    
+            <fieldset id=happyItem>
+                <legend>Which items make you happy today?</legend>
+                <ul>
+                    <li><input type="checkbox" name="items" value="Flowers" id="flowers"><label for="flowers">Flowers</label></li>
+                    <li><input type="checkbox" name="items" value="Sunshine" id="sunshine"><label for="sunshine">Sunshine</label></li>
+                    <li><input type="checkbox" name="items" value="Stars" id="stars"><label for="stars">Stars</label></li>
+                    <li><input type="checkbox" name="items" value="Moon" id="moon"><label for="moon">Moon</label></li>
+                    <li><input type="checkbox" name="items" value="Grass" id="grass"><label for="grass">Grass</label></li>
+                    <li><input type="checkbox" name="items" value="Birds" id="birds"><label for="birds">Birds</label></li>
+                </ul>
+            </fieldset>
+            
+<!-- RATE YOUR ATTITUDE OF GRATITUDE -->
+
+            <fieldset id=rate>
+                <legend>Rate your Attitude of Gratitude:</legend>
+                <ul>
+                    <li><label for="rating">Rate your gratitude level:<br>
+                    </label><input type="range" min="1" max="10" name="scale" id="scaleIt"></li>
+                </ul>
+            </fieldset><br>
+            <input type="submit" value="saveGratitude" id="saveGrat" /><br />
+        </form>
+        <script src="js/JSON.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+    </body>
+</html>
