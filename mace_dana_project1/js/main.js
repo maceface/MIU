@@ -31,14 +31,15 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Get Checkbox Value
     function getCheckboxValue(){
-        var myCheckboxes = whatever("gratitudeForm").items;
-        savedChecks = [ ];
-        for(i=0; i<myCheckboxes.length; i++){
+        var myCheckboxes = document.forms[0].items;
+        var savedChecks = [];
+        for (var i=0, j=myCheckboxes.length; i<j; i++){
             if(myCheckboxes[i].checked){
-                whatGotChecked = myCheckboxes[i].value;
+                var whatGotChecked = myCheckboxes[i].value;
                 savedChecks.push(whatGotChecked);
             }
         }
+        return savedChecks;
     }
     
         //Display Grat data on other page
@@ -73,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function(){
             //To the makeARequirement function and then passed here into the storeLocally function.
             id = key;
         }
-        getCheckboxValue();
+        var display = getCheckboxValue();
         //Store form field values in an object
         //Objects props - array with form labels and input values
         var choice = {};
@@ -109,8 +110,8 @@ window.addEventListener("DOMContentLoaded", function(){
         var recordYourHeart = document.createElement('ul');
         hereToThere.appendChild(recordYourHeart);
         document.body.appendChild(hereToThere);
-        whatever('choices').style.display = "display";
-        for(var i=0, len=localStorage.length; i<len;i++) {
+        whatever('choices').style.display = "block";
+        for(var i=0, len=localStorage.length; i<len; i++) {
             var doList = document.createElement('li');
             var linksLi = document.createElement('li');
             recordYourHeart.appendChild(doList);
@@ -122,15 +123,26 @@ window.addEventListener("DOMContentLoaded", function(){
             var makeSubList = document.createElement('ul');
             doList.appendChild(makeSubList);
             getImage(returnsAccepted.color[1], makeSubList);
-            for(var n in returnsAccepted) {
+            for (var n in returnsAccepted) {
                 var makeSubli = document.createElement('li');
                 makeSubList.appendChild(makeSubli);
                 var optSubText = returnsAccepted[n][0] + " " + returnsAccepted[n][1];
                 makeSubli.innerHTML = optSubText;
                 makeSubList.appendChild(linksLi);
             }
+            var breakTag = document.createElement('br');
+            linksLi.appendChild(breakTag);
+            
             doDeleteEditLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/link for each item in local storage
+        
+            var breakTag = document.createElement('br');
+            linksLi.appendChild(breakTag);
         }
+        hereToThere.style.margin = "0px 0px 8px 0px";
+        recordYourHeart.style.fontsize = "10pt";
+        recordYourHeart.style.margin = "8px 8px 0px 8px";
+        recordYourHeart.style.padding = "8px 8px 12px";
+        
     }
     
     //Get the image for the right category
@@ -181,6 +193,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     function dontLikeItChangeIt(){
         //Grab the data from our item from Local Storage.
+        var myCheckboxes = document.forms[0].items;
         var value = localStorage.getItem(this.key);
         var choice = JSON.parse(value);
         
@@ -193,16 +206,17 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('gratitude').value = choice.what[1];
         whatever('gratStory').value = choice.why[1];
         whatever('happyColorGroups').value = choice.color[1];
-        /*var myCheckboxes = whatever("gratitudeForm").items;
-        savedChecks = [ ];
+        
+        
         for(i=0; i<myCheckboxes.length; i++){
-            if(myCheckboxes[i].checked){
-                whatGotChecked = myCheckboxes[i].value;
-                savedChecks.push(whatGotChecked);
-                myCheckboxes[i].setAttribute("checked", "checked");
+            for(n=0; n<choice.length; n++){
+                if(myCheckboxes[i].value === choice[n]){
+                    myCheckboxes[i].setAttribute("checked", "checked");
+                }
             }
         }
-        whatever('scaleIt').value = choice.scale[1];*/
+        
+        whatever('scaleIt').value = choice.scale[1];
         
         //Remove the initial listener from the input "save contact" button.
         saveGrat.removeEventListener("click", storeLocally);
@@ -286,7 +300,9 @@ window.addEventListener("DOMContentLoaded", function(){
     var happyColorGroups = ["--Colors--", "Yellow", "Pink", "Blue", "Green", "Red", "Orange"],
         whatGotChecked,
         savedChecks,
+        dontLikeItChangeIt,
         somethingIsSeriouslyWrongMsg = whatever('errors');
+        
     ;
     doGroup();
        
@@ -297,4 +313,5 @@ window.addEventListener("DOMContentLoaded", function(){
     clearGrat.addEventListener("click", getOffMyDevice);
     var saveGrat = whatever("saveGrat");
     saveGrat.addEventListener("click", makeARequirement);
+    
 });
