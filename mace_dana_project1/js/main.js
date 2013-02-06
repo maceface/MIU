@@ -31,11 +31,11 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Get Checkbox Value
     function getCheckboxValue(){
-        var myCheckboxes = whatever("gratitudeForm").items;
-        savedChecks = [ ];
-        for(i=0; i<myCheckboxes.length; i++){
+        var myCheckboxes = document.forms[0].items;
+        var savedChecks = [];
+        for (var i=0, j=myCheckboxes.length; i<j; i++){
             if(myCheckboxes[i].checked){
-                whatGotChecked = myCheckboxes[i].value;
+                var whatGotChecked = myCheckboxes[i].value;
                 savedChecks.push(whatGotChecked);
             }
         }
@@ -193,6 +193,10 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('gratitude').value = choice.what[1];
         whatever('gratStory').value = choice.why[1];
         whatever('happyColorGroups').value = choice.color[1];
+        var myCheckboxes = document.forms[0].display;
+        for(i=0; i<choice.items[1].length; i++){
+            document.getElementById(choice.items[1][i]).setAttribute("checked", "checked");
+        }
         /*var myCheckboxes = whatever("gratitudeForm").items;
         savedChecks = [ ];
         for(i=0; i<myCheckboxes.length; i++){
@@ -201,8 +205,8 @@ window.addEventListener("DOMContentLoaded", function(){
                 savedChecks.push(whatGotChecked);
                 myCheckboxes[i].setAttribute("checked", "checked");
             }
-        }
-        whatever('scaleIt').value = choice.scale[1];*/
+        }*/
+        whatever('scaleIt').value = choice.scale[1];
         
         //Remove the initial listener from the input "save contact" button.
         saveGrat.removeEventListener("click", storeLocally);
