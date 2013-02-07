@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", function(){
             
             choice.why = ["I have an attitude of gratitude because:", whatever('gratStory').value];
             
-            choice.color = ["What color do you like best today?:",  whatever('happyColorGroups').value];
+            choice.color = ["What color do you like best today?:", whatever('happyColorGroups').value];
             
             choice.items = ["Which items make you happy?", savedChecks];
             
@@ -191,7 +191,7 @@ window.addEventListener("DOMContentLoaded", function(){
         linksLi.appendChild(dumpItLink);
     }
     
-    function dontLikeItChangeIt(){
+    var dontLikeItChangeIt = function(){
         //Grab the data from our item from Local Storage.
         var myCheckboxes = document.forms[0].items;
         var value = localStorage.getItem(this.key);
@@ -210,11 +210,13 @@ window.addEventListener("DOMContentLoaded", function(){
         
         for(i=0; i<myCheckboxes.length; i++){
             for(n=0; n<choice.length; n++){
+                console.log(myCheckboxes[i].value +" || "+ choice[n]);
                 if(myCheckboxes[i].value === choice[n]){
                     myCheckboxes[i].setAttribute("checked", "checked");
                 }
             }
         }
+        
         
         whatever('scaleIt').value = choice.scale[1];
         
@@ -289,7 +291,7 @@ window.addEventListener("DOMContentLoaded", function(){
             e.preventDefault();
             return false;
         }else{
-            //if all is OK, save our data!  Send key value (which came from editData function).
+            //if all is OK, save our data! Send key value (which came from editData function).
             //Remember this key value was passed through the editSubmit event Listener
             storeLocally(this.key);
         }
@@ -307,11 +309,14 @@ window.addEventListener("DOMContentLoaded", function(){
     doGroup();
        
     //Set link and submit click events
+    
+    
     var displayGrat = whatever("displayGrat");
     displayGrat.addEventListener("click", showMeWutchaGot);
     var clearGrat = whatever("clearGrat");
     clearGrat.addEventListener("click", getOffMyDevice);
     var saveGrat = whatever("saveGrat");
     saveGrat.addEventListener("click", makeARequirement);
+    
     
 });
