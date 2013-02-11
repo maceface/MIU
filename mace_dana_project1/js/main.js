@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", function(){
     function getCheckboxValue(){
         var myCheckboxes = document.forms[0].items;
         var savedChecks = [];
-        for (var i=0, j=myCheckboxes.length; i<j; i++){
+        for (i=0, j=myCheckboxes.length; i<j; i++){
             if(myCheckboxes[i].checked){
                 var whatGotChecked = myCheckboxes[i].value;
                 savedChecks.push(whatGotChecked);
@@ -193,7 +193,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     var dontLikeItChangeIt = function(){
         //Grab the data from our item from Local Storage.
-        var myCheckboxes = document.forms[0].items;
+        
         var value = localStorage.getItem(this.key);
         var choice = JSON.parse(value);
         
@@ -207,6 +207,7 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('gratStory').value = choice.why[1];
         whatever('happyColorGroups').value = choice.color[1];
         
+        var myCheckboxes = document.forms[0].items;
         
         for(i=0; i<myCheckboxes.length; i++){
             for(n=0; n<choice.length; n++){
@@ -216,6 +217,7 @@ window.addEventListener("DOMContentLoaded", function(){
                 }
             }
         }
+        
         
         
         whatever('scaleIt').value = choice.scale[1];
