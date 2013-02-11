@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", function(){
         return beHappy;
     }
     
-    //Create select field element and populate with options
     function doGroup(){
         var doTag = document.getElementsByTagName("form");
             pickAList = whatever('colors');
@@ -32,14 +31,15 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Get Checkbox Value
     function getCheckboxValue(){
-        var myCheckboxes = whatever("gratitudeForm").items;
-        savedChecks = [ ];
-        for(i=0; i<myCheckboxes.length; i++){
+        var myCheckboxes = document.forms[0].items;
+        var savedChecks = [];
+        for (var i=0, j=myCheckboxes.length; i<j; i++){
             if(myCheckboxes[i].checked){
-                whatGotChecked = myCheckboxes[i].value;
+                var whatGotChecked = myCheckboxes[i].value;
                 savedChecks.push(whatGotChecked);
             }
         }
+        return savedChecks;
     }
     
         //Display Grat data on other page
@@ -74,8 +74,7 @@ window.addEventListener("DOMContentLoaded", function(){
             //To the makeARequirement function and then passed here into the storeLocally function.
             id = key;
         }
-        //var display =
-        getCheckboxValue();
+        var display = getCheckboxValue();
         //Store form field values in an object
         //Objects props - array with form labels and input values
         var choice = {};
@@ -167,7 +166,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
     //Make Item Links
-    //Create the edit and delete links for each stored item when displayed
+    //Creat the edit and delete links for each stored item when displayed
     function doDeleteEditLinks(key, linksLi){
         //add edit single item link
         var fixerLink = document.createElement('a');
@@ -195,6 +194,7 @@ window.addEventListener("DOMContentLoaded", function(){
     function dontLikeItChangeIt(){
         //Grab the data from our item from Local Storage.
         var myCheckboxes = document.forms[0].items;
+        alert(myCheckboxes.length);
         var value = localStorage.getItem(this.key);
         var choice = JSON.parse(value);
         
@@ -218,7 +218,6 @@ window.addEventListener("DOMContentLoaded", function(){
                 }
             }
         }
-        
         
         
         whatever('scaleIt').value = choice.scale[1];
