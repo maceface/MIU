@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
         return beHappy;
     }
     
+    //Create select field element and populate with options
     function doGroup(){
         var doTag = document.getElementsByTagName("form");
             pickAList = whatever('colors');
@@ -31,15 +32,14 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //Get Checkbox Value
     function getCheckboxValue(){
-        var myCheckboxes = document.forms[0].items;
-        var savedChecks = [];
-        for (i=0, j=myCheckboxes.length; i<j; i++){
+        var myCheckboxes = whatever("gratitudeForm").items;
+        savedChecks = [ ];
+        for(i=0; i<myCheckboxes.length; i++){
             if(myCheckboxes[i].checked){
-                var whatGotChecked = myCheckboxes[i].value;
+                whatGotChecked = myCheckboxes[i].value;
                 savedChecks.push(whatGotChecked);
             }
         }
-        return savedChecks;
     }
     
         //Display Grat data on other page
@@ -74,7 +74,8 @@ window.addEventListener("DOMContentLoaded", function(){
             //To the makeARequirement function and then passed here into the storeLocally function.
             id = key;
         }
-        var display = getCheckboxValue();
+        //var display =
+        getCheckboxValue();
         //Store form field values in an object
         //Objects props - array with form labels and input values
         var choice = {};
@@ -166,7 +167,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     
     //Make Item Links
-    //Creat the edit and delete links for each stored item when displayed
+    //Create the edit and delete links for each stored item when displayed
     function doDeleteEditLinks(key, linksLi){
         //add edit single item link
         var fixerLink = document.createElement('a');
@@ -191,9 +192,9 @@ window.addEventListener("DOMContentLoaded", function(){
         linksLi.appendChild(dumpItLink);
     }
     
-    var dontLikeItChangeIt = function(){
+    function dontLikeItChangeIt(){
         //Grab the data from our item from Local Storage.
-        
+        var myCheckboxes = document.forms[0].items;
         var value = localStorage.getItem(this.key);
         var choice = JSON.parse(value);
         
@@ -207,13 +208,13 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('gratStory').value = choice.why[1];
         whatever('happyColorGroups').value = choice.color[1];
         
-        var myCheckboxes = document.forms[0].items;
-        
-        for(i=0; i<myCheckboxes.length; i++){
-            for(n=0; n<choice.length; n++){
-                console.log(myCheckboxes[i].value +" || "+ choice[n]);
-                if(myCheckboxes[i].value === choice[n]){
-                    myCheckboxes[i].setAttribute("checked", "checked");
+        items = choice.items[1].toSring().split(',');
+        alert(items);
+        for(i=0; 1<myCheckboxes.length; i++){
+            for(n=0; m<items.length; n++){
+                if(myCheckboxes[i].value === items[n]){
+                    alert("We have a match");
+                    myCheckboxes[i].checked = true;
                 }
             }
         }
