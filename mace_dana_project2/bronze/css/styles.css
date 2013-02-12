@@ -1,0 +1,124 @@
+/* Project 2
+Dana Mace
+VFW 1301 */
+
+
+body {
+    background-image: url("../img/paper.png");
+}
+
+h1 {
+    background-color: #f0ece3;
+    color: #ffffff;
+    padding: 0.25em;
+    text-align: center;
+    text-shadow: 2px 2px 2px #98b5db;
+    font-family: helvetica;
+    width: "device-width";
+    font-size: 30px;
+}
+
+fieldset {
+    margin-bottom: 40px;
+}
+
+legend {
+    color: #000000;
+    font-family: helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+label {
+    font-family: helvetica;
+    font-size: 13px;
+    font-weight: 100;
+    background-color: white;
+    text-justify: distribute;
+}
+
+input {
+    width: 50%;
+}
+
+textarea {
+    width: 95%;
+    height: 80px;
+}
+
+p {
+    text-align: center;
+    font-family: arial;
+    font-size: 13px;
+}
+
+.cf:before,
+.cf:after{
+    content:"";
+    display:table;
+}
+
+.cf:after{
+    clear:both;
+}
+.cf{
+    zoom:1;
+}
+
+nav {
+    text-align: center;
+}
+
+li {
+    padding-bottom: 1px;
+    font-family: helvetica;
+    font-size: 12px;
+    list-style-type: square;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li a {
+    display: block;
+    width: 150px;
+    height: 35px;
+    list-style:none;
+    float: left;
+    line-height: 2em;
+    padding: 4 1em;
+}
+
+a {
+    font-family: helvetica;
+    font-size: 14px;
+    color: blue;
+}
+
+h2 {
+    text-align: center;
+}
+
+footer {
+    padding-top: 30px;
+}
+
+/*  TYPE SELECTORS
+    #timeLine{background: green;padding: 10px;font-weight: bold;}
+    .errormsg{background: #ff0000; color #fff;padding: 10px;font-weight; bold;}
+    Note: you can only use an id once on the HTML doc
+    
+    DESCENDENT SELECTORS
+    form span{background: #000; color: #fff;font-size: 8px;}
+    form ul{margin: 0px;padding: 0;list-style: none;}
+    form fieldset ul * input{width: 200px; padding: 5px;margin: 5px;}
+    * means everything (all)
+    to target just an id, you could say... form fieldset #idWhateverItIs input...
+    
+    CHILD SELECTORS
+    body > p {...}*/

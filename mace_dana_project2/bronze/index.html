@@ -1,0 +1,82 @@
+   <!--
+ // Activity 1 1302
+	// Mobile Interfaces and Usability
+	// Mobile Development
+	// Full Sail University
+	// Dana Mace
+-->
+
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"> <!-- type of charset -->
+        <meta name="description" content="See the glass half full.  Keep track of what you're grateful for on a daily basis.  Make the world a better place, one thought at a time." />
+        <meta name="keywords" content="Gratitude, Journal, Grateful, Happy, Mobile" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+	
+        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+            
+        <title>An Attitude of Gratitude Journal</title>
+	
+	<!-- StyleSheets under here -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+    
+        <!-- Home Page -->
+        <div data-role="page" id="home" data-theme="a">
+            
+            <div data-role="header" data-theme="a">
+                <a href="404.html" data-iconpos="notext" data-icon="search" data-roll="button" class="ui-btn-right" data-transition="slideup" data-ajax="false">Search</a></li>
+                <img id="icon" src="images/icon.png" class="ui-btn-left" />
+            </div>
+        
+            <div data-role="content">
+                
+                
+                <img id="tree" src="images/treeofheartslogo.png">
+                    
+                        <a href="additem.html" id="addNewGrat" data-role="button" data-inline="true" data-icon="arrow-r" data-inconpos="right" data-transition="slide" data-theme="b" data-ajax="false">Add a Gratitude</a>
+            
+                    <div data-role="controlgroup">
+                        <li data-role="list-divider">Dates</li>
+                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Date</a></li>
+                        <li data-role="list-divider">Colors</li>
+                        <li></li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Color</a></li>
+                        <li data-role="list-divider">Checkboxes</li>
+                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Checkboxed Items</a></li>
+                        <li data-role="list-divider">Posts</li>
+                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Post a Gratitude on Facebook</a></li>
+                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Post a Gratitude on Twitter</a></li>
+                    </div>
+            
+            </div>
+            
+            <div data-role="footer" data-position="fixed" data-theme="a">
+                
+                
+                
+            </div>
+        
+        </div>
+        	<!-- JavaScript under here -->
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script type"text/javascript" src="js/main.js"></script>
+        
+
+</body>
+</html>
