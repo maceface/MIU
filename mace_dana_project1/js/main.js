@@ -1,7 +1,6 @@
 /* Dana Mace
-VFW TERM 1301
-Project 3
-January 24, 2013
+MIU TERM 1302
+Feb 11, 2013
 main.js page*/
 
 // Main Function Ensures DOM content is loaded and ready
@@ -191,7 +190,7 @@ window.addEventListener("DOMContentLoaded", function(){
         linksLi.appendChild(dumpItLink);
     }
     
-    function dontLikeItChangeIt(){
+    var dontLikeItChangeIt = function(){
         //Grab the data from our item from Local Storage.
         var myCheckboxes = document.forms[0].items;
         alert(myCheckboxes.length);
@@ -208,10 +207,10 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('gratStory').value = choice.why[1];
         whatever('happyColorGroups').value = choice.color[1];
         
-        items = choice.items[1].toSring().split(',');
+        items = choice.items[1].toString().split(',');
         alert(items);
         for(i=0; 1<myCheckboxes.length; i++){
-            for(n=0; m<items.length; n++){
+            for(n=0; n<items.length; n++){
                 if(myCheckboxes[i].value === items[n]){
                     alert("We have a match");
                     myCheckboxes[i].checked = true;
