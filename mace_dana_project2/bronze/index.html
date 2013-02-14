@@ -37,43 +37,194 @@
 <body>
     
         <!-- Home Page -->
-        <div data-role="page" id="home" data-theme="a">
-            
-            <div data-role="header" data-theme="a">
-                <a href="404.html" data-iconpos="notext" data-icon="search" data-roll="button" class="ui-btn-right" data-transition="slideup" data-ajax="false">Search</a></li>
-                <img id="icon" src="images/icon.png" class="ui-btn-left" />
-            </div>
+        <div data-role="page" data-theme="a" id="home">
+	    
+	    <div data-role="header" data-position="fixed">
+		<img src="images/heading.png" id="hi"/>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<a href="additem.html" data-ajax="false">
+		    <img src="images/treeofheartslogo.png" id="cta"/>
+		</a>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search Gratitudes" data-inset="false">
+		    <li data-role="list-divider" data-inset="true">Browse by:</li>
+		    <li><a href="#date"><p><img src="img/Yellow.png" alt="Yellow Heart">DATE</p></a></li>
+		    <li><a href="#gratFor"><p><img src="img/Blue.png" alt="Blue Heart">WHAT I AM GRATEFUL FOR</p></a></li>
+		    <li><a href="#color"><p><img src="img/Green.png" alt="Green Heart">COLOR</p></a></li>
+		    <li><a href="#items"><p><img src="img/Orange.png" alt="Orange Heart">ITEMS</p></a></li>
+		    <li><a href="#attRat"><p><img src="img/Red.png" alt="Red Heart">ATTITUDE RATING</p></a></li>
+		</ul>
+	    </div>
+	    
+	    <div data-role="footer" data-theme="a">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	
+    <!-- ABOUT PAGE -->
+	
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="about">
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="images/heading.png" alt="An Attitude of Gratitude Journal"></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a">
+		<a href="mailto:maceface@fullsail.edu" data-ajax="false">
+		    <img src="images/author.png" id="author"/>
+		</a><br>
+		
+		<a href="images/authorinfo.png" data-ajax="false">
+		    <img src="images/about.png" id="info"/>
+		</a><br>
+	    
+		<a href="https://github.com/maceface/MIU.git" data-ajax="false">
+		    <img src="images/github.png" id="github"/>
+		</a><br>
+		
+		<a href="https://shutterstock.com" data-ajax="false">
+		    <img src="images/credits.png" id="credits"/>
+		</a>
+	    </div>
+	    
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	
+    <!-- DATE PAGE -->
+	
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="date"> 
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="img/Yellow.png" alt="Yellow Heart">DATES</h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a">
+		<div class="ui-grid-b">
+		<div class="ui-block-a">
+		    <h3>MONTH</h3>
+		</div>
+		<div class="ui-block-b">
+		    <h3>DAY</h3>    
+		</div>
+		<div class="ui-block-c">
+		    <h3>YEAR</h3>    
+		</div>
+	    </div><!-- /grid-b -->
+	    </div>
+	</div>
+	
+    <!-- GRATEFUL FOR PAGE -->
+	
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="gratFor"> 
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="img/Blue.png" alt="Blue Heart">WHAT I AM GRATEFUL FOR</h1>
+	    </div>
+	    
+	    <div data-role="content">
+		<h3 data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search By Keyword" data-inset="false">All my Gratitudes</h3>
+		<p>This will be a search for all of my gratitudes...</p>
+	    </div>
+	
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	
+    <!-- COLOR PAGE -->
+	    
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="color"> 
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="img/Green.png" alt="Green Heart">COLOR</h1>
+	    </div>
+	    
+	    <div data-role="content">
+		<h3>COLOR</h3>
+		<p>This will be COLORS...</p>
+	    </div>
+	
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	
+    <!-- ITEM PAGE -->
+	
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="items"> 
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="img/Orange.png" alt="Orange Heart">ITEMS</h1>
+	    </div>
+	    
+	    <div data-role="content">
+		<h3>ITEMS</h3>
+		<p>This will be ITEMS...</p>
+	    </div>
+	
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	
+    <!-- RATING PAGE -->
+    
+	<div data-role="page" data-add-back-btn="true" data-theme="a" id="attRat"> 
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="img/Red.png" alt="Red Heart">ATTITUDE RATING</h1>
+	    </div>
+	    
+	    <div data-role="content">
+		<h3>ATTITUDE RATING</h3>
+		<p>This will be ATTITUDE RATING...</p>
+	    </div>
+	
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	    
+    
+    <!-- JavaScript under here -->
         
-            <div data-role="content">
-                
-                
-                <img id="tree" src="images/treeofheartslogo.png">
-                    
-                        <a href="additem.html" id="addNewGrat" data-role="button" data-inline="true" data-icon="arrow-r" data-inconpos="right" data-transition="slide" data-theme="b" data-ajax="false">Add a Gratitude</a>
-            
-                    <div data-role="controlgroup">
-                        <li data-role="list-divider">Dates</li>
-                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Date</a></li>
-                        <li data-role="list-divider">Colors</li>
-                        <li></li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Color</a></li>
-                        <li data-role="list-divider">Checkboxes</li>
-                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Search Recorded Gratitudes by Checkboxed Items</a></li>
-                        <li data-role="list-divider">Posts</li>
-                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Post a Gratitude on Facebook</a></li>
-                        <li><a href="404.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide" data-ajax="false">Post a Gratitude on Twitter</a></li>
-                    </div>
-            
-            </div>
-            
-            <div data-role="footer" data-position="fixed" data-theme="a">
-                
-                
-                
-            </div>
-        
-        </div>
-        	<!-- JavaScript under here -->
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
         <script type"text/javascript" src="js/main.js"></script>
         

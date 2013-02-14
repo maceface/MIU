@@ -1,0 +1,289 @@
+   <!--
+ // Activity 1 1302
+	// Mobile Interfaces and Usability
+	// Mobile Development
+	// Full Sail University
+	// Dana Mace
+-->
+
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"> <!-- type of charset -->
+        <meta name="description" content="See the glass half full.  Keep track of what you're grateful for on a daily basis.  Make the world a better place, one thought at a time." />
+        <meta name="keywords" content="Gratitude, Journal, Grateful, Happy, Mobile" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+	
+        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+            
+        <title>An Attitude of Gratitude Journal</title>
+	
+	<!-- StyleSheets under here -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+    
+        <!-- Home Page -->
+        <div data-role="page" id="home" data-theme="a">
+	    
+	    <div data-role="header" data-position="fixed">
+		<img  src="images/heading.png" id="heading image"/>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<a href="additem.html" data-ajax="false">
+		    <img src="images/treeofheartslogo.png" id="cta"/>
+		</a>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search Gratitudes" data-inset="false">
+		    <li data-role="list-divider" data-inset="true">Browse by:</li>
+		</ul>
+	    </div>
+	    
+	    <div data-role="collapsible" data-theme="a" data-content-theme="a" data-inset="true" data-collapsed="true">
+		<h3><img src="img/Yellow.png" alt="Yellow Heart">DATE</h3>
+		
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>By MONTH</h3>
+		    
+			<div data-role="collapsible" data-mini=true" data-theme="a" data-content-theme="a" data-inset="true">
+			    <h3>January</h3>
+			    <p>January 20, 2013 - I am grateful for my Grandma's birthday today.  She is 80 years old now and still going strong.  She is my favorite person in the world.</p>
+			    <p>January 25, 2013 - Today was my stepdad's birthday.  He passed away in 2006.  I miss him a lot, but I am grateful that I was able to get to know him.  He was a great man.</p>
+			</div>
+			
+			<div data-role="collapsible" data-mini=true" data-theme="a" data-content-theme="a" data-inset="true">
+			    <h3>February</h3>
+			    <p>February 14, 2013 - It's Valentine's day!  Yay!  I am grateful for all teh people in my life that love me.</p>
+			</div>
+		    
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>By DAY</h3>
+			<p>January 3, 2013 - I am grateful for my family and all the joy they bring to me.  I am blessed.</p>
+			<p>February 3, 2013 - I love to go for spontaneous car rides and do fun things.  I am grateful for a husband who loves this too.</p>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>By YEAR</h3>
+			
+			<div data-role="collapsible" data-mini=true" data-theme="a" data-content-theme="a" data-inset="true">
+			    <h3>2012</h3>
+			    <p>February 14, 2012 - It's Valentine's day!  Yay!  I am grateful for all teh people in my life that love me.</p>
+			</div>
+			
+			<div data-role="collapsible" data-mini=true" data-theme="a" data-content-theme="a" data-inset="true">
+			    <h3>2013</h3>
+			    <p>February 14, 2013 - Hey...it's Valentine's day again!  Yay!  I am grateful for all teh people in my life that love me.</p>
+			</div>
+			
+		    </div>
+	    </div>
+	    
+	    <div data-role="collapsible" data-theme="a" data-content-theme="a" data-inset="true">
+		<h3><img src="img/Blue.png" alt="Blue Heart">WHAT I'M GRATEFUL FOR</h3>
+	    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+		        <h3 data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search By Keyword" data-inset="false">All my Gratitudes</h3>
+			<p>This will be a search for all of my gratitudes...</p>
+		    </div>
+	    </div>
+	    
+	    <div data-role="collapsible" data-theme="a" data-content-theme="a" data-inset="true">
+		<h3><img src="img/Green.png" alt="Green Heart">COLOR</h3>
+		
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>YELLOW</h3>
+			<ul>
+			<li><img src="img/Yellow.png"/></li>
+			</ul>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>PINK</h3>
+			<ul>
+			<li><img src="img/Pink.png"/></li>
+			</ul>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>BLUE</h3>
+			<ul>
+			<li><img src="img/Blue.png"/></li>
+			</ul>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>GREEN</h3>
+			<ul>
+			<li><img src="img/Green.png"/></li>
+			</ul>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>RED</h3>
+			<ul>
+			<li><img src="img/Red.png"/></li>
+			</ul>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>ORANGE</h3>
+			<ul>
+			<li><img src="img/Orange.png"/></li>
+			</ul>
+		    </div>
+	    </div>
+	    
+	    <div data-role="collapsible" data-theme="a data-content-theme="a" data-inset="true">
+		<h3><img src="img/Orange.png" alt="Green Heart">ITEMS</h3>
+		<div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+		    <h3>FLOWERS</h3>
+	            <p>Gratitudes with Flower images</p>
+		    <img src="images/items_images.png"><br>
+		    <img src="images/items_flowers.png">
+		</div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>SUNSHINE</h3>
+			<p>Gratitudes with Sunshine images</p>
+			<img src="images/items_sunshine.png">
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>STARS</h3>
+			<p>Gratitudes with Stars images</p>
+			<img src="images/items_stars.png">
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>MOON</h3>
+			<p>Gratitudes with Moon images</p>
+			<img src="images/items_moon.png">
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>GRASS</h3>
+			<p>Gratitudes with Grass images</p>
+			<img src="images/items_grass.png">
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>BIRDS</h3>
+			<p>Gratitudes with Birds images</p>
+			<img src="images/items_birds.png">
+		    </div>
+	    </div>
+	    
+	    <div data-role="collapsible" data-theme="a data-content-theme="a" data-inset="true">
+		<h3><img src="img/Red.png" alt="Green Heart">ATTITUDE RATING</h3>
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>HIGHEST RATED</h3>
+			<p>rating: 10 - February 14, 2013</p>
+			<p>rating: 9 - February 14, 2013</p>
+			<p>rating: 8 - February 13, 2013</p>
+		    </div>
+		    
+		    <div data-role="collapsible" data-mini="true" data-theme="a" data-content-theme="a" data-inset="true">
+			<h3>LOWEST RATED</h3>
+			<p>rating: 4 - February 1, 2013</p>
+			<p>rating: 3 - February 3, 2013</p>
+			<p>rating: 2 - February 4, 2013</p>
+		    </div>
+	    </div>
+	    
+	    <div data-role="footer" data-theme="a">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	
+	</div>
+        
+	<div data-role="page" id="about" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="images/heading.png" alt="An Attitude of Gratitude Journal"></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a">
+		<a href="mailto:maceface@fullsail.edu" data-ajax="false">
+		    <img src="images/author.png" id="author"/>
+		</a><br>
+		
+		<a href="images/authorinfo.png" data-ajax="false">
+		    <img src="images/about.png" id="info"/>
+		</a><br>
+	    
+		<a href="https://github.com/maceface/MIU.git" data-ajax="false">
+		    <img src="images/github.png" id="github"/>
+		</a><br>
+		
+		<a href="https://shutterstock.com" data-ajax="false">
+		    <img src="images/credits.png" id="credits"/>
+		</a>
+	    </div>
+	    
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	    
+	<div data-role="page" id="mygrats" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><img src="images/heading.png" alt="An Attitude of Gratitude Journal"></h1>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<a href="additem.html" data-ajax="false">
+		    <img src="images/myGrats.png" id="mygratsimage"/>
+		</a>
+	    </div>
+	    
+	    <div data-role="footer" data-theme="a" data-position="fixed">
+		<div data-role="navbar" data-inconpos="top">
+		    <ul>
+			<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	    
+	
+	    
+            
+        	<!-- JavaScript under here -->
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script type"text/javascript" src="js/main.js"></script>
+        
+
+</body>
+</html>
