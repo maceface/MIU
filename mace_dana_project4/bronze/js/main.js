@@ -29,15 +29,16 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     //Get Checkbox Value
-    function getValues(checkBox){
-        var checkBoxGroup = document.getElementsByName(checkBox);
-        var checkBoxValues = [];
-        for (var i=0; i<checkBoxGroup.length; i++){
-            if(checkBoxGroup[i].checked){
-                checkBoxValues.push(checkBoxGroup[i].value);
+    function getCheckboxValue(){
+        var myCheckboxes = document.forms[0].items;
+        var savedChecks = [];
+        for (var i=0, j=myCheckboxes.length; i<j; i++){
+            if(myCheckboxes[i].checked){
+                var whatGotChecked = myCheckboxes[i].value;
+                savedChecks.push(whatGotChecked);
             }
         }
-        return checkBoxValues;
+        return savedChecks;
     }
     
         //Display Grat data on other page
@@ -72,19 +73,20 @@ window.addEventListener("DOMContentLoaded", function(){
             //To the makeARequirement function and then passed here into the storeLocally function.
             id = key;
         }
+        var display = getCheckboxValue();
         //Store form field values in an object
         //Objects props - array with form labels and input values
-        var choice      = {};
+        var choice = {};
             choice.date = ["Date:", whatever('date').value];
             choice.time = ["Time:", whatever('time').value];
             
             choice.what = ["What I'm grateful for:", whatever('gratitude').value];
             
-            choice.why  = ["I have an attitude of gratitude because:", whatever('gratStory').value];
+            choice.why = ["I have an attitude of gratitude because:", whatever('gratStory').value];
             
-            choice.color = ["What color do you like best today?:", whatever('colors').value];
+            choice.color = ["What color do you like best today?:", whatever('happyColorGroups').value];
             
-            choice.items = ["Which items make you happy?", getValues("happyItem").value];
+            choice.items = ["Which items make you happy?", savedChecks];
             
             choice.scale = ["Rate your Attitude of Gratitude:", whatever('scaleIt').value];
             
@@ -203,8 +205,7 @@ window.addEventListener("DOMContentLoaded", function(){
         whatever('time').value = choice.time[1];
         whatever('gratitude').value = choice.what[1];
         whatever('gratStory').value = choice.why[1];
-        whatever('colors').value = choice.color[1];
-        whatever('moon').value = choice.items[1];
+        whatever('happyColorGroups').value = choice.color[1];
         
         /*items = choice.items[1].toString().split(',');
         alert(items);

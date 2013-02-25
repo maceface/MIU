@@ -1,0 +1,472 @@
+   <!--
+ // Activity 1 1302
+	// Mobile Interfaces and Usability
+	// Mobile Development
+	// Full Sail University
+	// Dana Mace
+-->
+
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"> <!-- type of charset -->
+        <meta name="description" content="See the glass half full.  Keep track of what you're grateful for on a daily basis.  Make the world a better place, one thought at a time." />
+        <meta name="keywords" content="Gratitude, Journal, Grateful, Happy, Mobile" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+	
+        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+            
+        <title>An Attitude of Gratitude Journal</title>
+	
+	<!-- StyleSheets under here -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+
+<body>
+    
+        <!-- Home Page -->
+        <div data-role="page" id="gohome" data-theme="a">
+	    
+	    <div data-role="header" data-position="fixed">
+		<img  src="images/heading.png" id="headingImage"/>
+	    </div>
+	    
+	    <div data-role="content" data-theme="a">
+		<a href="#addItem">
+		    <img src="images/treeofheartslogo.png" id="cta"/>
+		</a>
+	    
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Find Gratitudes. . ." data-inset="true">
+		    <li data-role="list-divider" class="browseListDivider">Browse by:</li>
+		    <li data-theme="a"><a href="#date1" class="pageNames"><img src="img/Yellow.png" alt="Yellow Heart">DATE</a></li>
+		    <li data-theme="a"><a href="#gratefulfor" class="pageNames"><img src="img/Blue.png" alt="Blue Heart">GRATITUDES</a></li>
+		    <li data-theme="a"><a href="#color" class="pageNames"><img src="img/Green.png" alt="Green Heart">COLOR</a></li>
+		    <li data-theme="a"><a href="#items" class="pageNames"><img src="img/Orange.png" alt="Orange Heart">ITEMS</a></li>
+		    <li data-theme="a"><a href="#rating" class="pageNames"><img src="img/Red.png" alt="Red Heart">RATINGS</a></li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter" data-theme="a">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+		        <li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+		        <li><a href="#about" data-icon="info">About</a></li>
+		        <li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  form page -->
+    
+	<div data-role="page" id="addItem" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+	        <h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content">
+	    
+	        <form action="" id="addGratForm">
+		
+		    <div data-role="fieldcontain">
+		        <a href="#lookAtLocalStorage" id="lookAtGrats" class="display" data-mini="false" data-role="button" data-theme="b">View All Gratitudes</a>
+		        <a href="#" data-role="button" data-mini="false" id="clearGrats">Delete All Gratitudes</a>
+		    </div>
+		
+		    <span class="pageInfo">* REQUIRED FIELDS</span><br><br>
+		    <!--span class="top">Use this form to record a gratitude.</span><br><br-->
+		    <span class="required">Add a Gratitude</span>
+		
+		    <!--fieldset data-role="fieldcontain"-->
+		
+			<div data-role="fieldcontain">
+			    <label for="date"><strong>* DATE:</strong><br></label>
+			    <input type="date" name="date" id="formDate" data-role="datebox" data-options='{"mode": "calbox"}' placeholder="MM/DD/YYYY" class="required"/>
+			</div>
+		    
+			<div data-role="fieldcontain">
+			    <label for="time"><strong>TIME:</strong><br></label>
+			    <input type="time" name="time" id="formTime"/>
+			</div>
+		    
+		        <div data-role="fieldcontain">
+			    <label for="gratitude"><strong>* WHAT I'M GRATEFUL FOR:</strong><br></label>
+			    <textarea name="gratitude" id="gratWhat" placeholder="I'm am grateful for..." class="required"></textarea>
+			</div>
+                    
+			<div data-role="fieldcontain">
+			    <label for="story"><strong>IS THERE A STORY BEHIND THIS?</strong><br></label>
+			    <textarea name="gratitude" id="gratWhy" placeholder="I have an attitude of gratitude because..."></textarea>
+			</div>
+		    <!--/fieldset-->
+		    
+		    <fieldset data-role="fieldcontain">
+		    <legend>What color do you like best today?</legend>
+		    
+			<div data-role="fieldcontain">
+			    <label for="favcolor" data-theme="a"><strong>COLOR:</strong><br></label>
+			    <select name="favcolor" id="favcolor" data-native-menu="false" data-theme="a">
+				<option value="Select a color" selected="selected">SELECT A COLOR</option>
+				<option value="yellow">YELLOW</option>
+				<option value="pink">PINK</option>
+				<option value="blue">BLUE</option>
+				<option value="green">GREEN</option>
+				<option value="red">RED</option>
+				<option value="orange">ORANGE</option>
+			    </select>
+			</div>
+                    
+		    </fieldset>
+                
+		    <fieldset data-role="fieldcontain">
+		    <legend>Which items make you happy?</legend>
+		    
+			<div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup">
+				<input type="checkbox" value="flowers" name="items" id="flowers"/>
+				<label for="flowers" id="theFlowerBox"><strong>FLOWERS</strong></label>
+			
+				<input type="checkbox" value="sunshine" name="items" id="sunshine"/>
+				<label for="sunshine" id="theSunshineBox"><strong>SUNSHINE</strong></label>
+                            
+				<input type="checkbox" value="stars" name="items" id="stars"/>
+				<label for="stars" id="theStarBox"><strong>STARS</strong></label>
+                            
+				<input type="checkbox" value="moon" name="items" id="moon"/>
+				<label for="moon" id="theMoonBox"><strong>MOON</strong></label>
+                            
+				<input type="checkbox" value="grass" name="items" id="grass"/>
+				<label for="grass" id="theGrassBox"><strong>GRASS</strong></label>
+                            
+				<input type="checkbox" value="birds" name="items" id="birds"/>
+				<label for="birds" id="theBirdsBox"><strong>BIRDS</strong></label>
+			    </fieldset>
+			</div>
+                
+		    </fieldset>
+		
+		    <fieldset data-role="fieldcontain">
+		    <legend>Rate Your Gratitude</legend>
+		
+			<div data-role="fieldcontain">
+			    <label for="gratRate"><strong>Gratitude Rating:</strong></label>
+			    <input type="range" name="gratRate" id="gratRate" value="10" min="0" max="10" data-theme="b"/>
+			</div>
+		    
+			<div data-role="fieldcontain">
+			    <input type="submit" class="submit" value="Save Gratitude" data-inline="false" data-theme="b" id="saveGrat"/>
+			    <input type="reset" value="Cancel" data-inline="false" data-theme="a" id="reset"/>
+			</div>
+		
+		    </fieldset>
+		
+		    <a href="#addGratErrors" id="addGratErrorsLink" data-rel="dialog" data-transition="pop"></a>
+		
+		</form>
+	
+		<div data-role="footer" data-position="fixed" data-id="thisfooter">
+		    <div data-role="navbar" data-iconpos="top">
+		        <ul>
+		            <li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+		            <li><a href="#about" data-icon="info">About</a></li>
+		            <li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		        </ul>
+		    </div>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  local storage page (display it) -->
+    
+	<div data-role="page" id="lookAtLocalStorage" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" id="data">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="FIND GRATITUDES" data-inset="false">
+			<li data-role="list-divider" class="browseListDivider">Browse Gratitudes</li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	    
+    
+    <!--  about page-->
+    
+	<div data-role="page" id="about" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a">
+	    
+		    <p class="pageInfo">Tid Bits</p>
+	    
+		    <a href="mailto:maceface@fullsail.edu">
+		        <img src="images/author.png" id="author"/>
+		    </a><br>
+		
+		    <a href="images/authorinfo.png">
+			<img src="images/about.png" id="info"/>
+		    </a><br>
+	    
+		    <a href="https://github.com/maceface/MIU.git">
+		        <img src="images/github.png" id="github"/>
+		    </a><br>
+		
+		    <a href="https://shutterstock.com">
+		        <img src="images/credits.png" id="credits"/>
+		    </a>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+	        <div data-role="navbar" data-iconpos="top">
+		    <ul>
+		        <li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  myGrats page-->
+    
+	<div data-role="page" id="mygrats" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a">
+	    
+		<p class="pageInfo">My Grats</p>
+		
+		<a href="404.html">
+			<img src="images/myGrats.png" id="mygratsimage"/>
+		</a>
+	    </div>
+		
+	    
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!-- DATE Page -->
+    
+	<div data-role="page" id="date1" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	    
+	    <div data-role="content">
+		<ul data-role="listview">
+			<li data-role="list-divider" class="liLabels">By MONTH</li>
+			<li data theme="a" class="liLabels">
+				<h3>February</h3>
+				<p>February 14, 2013 - It's Valentine's day!  Yay!  I am grateful for all teh people in my life that love me.</p>
+			</li>
+			<li data theme="a" class="liLabels">
+				<h3>January</h3>
+				<p>January 25, 2013 - Today was my stepdad's birthday.  He passed away in 2006.  I miss him a lot, but I am grateful that I was able to get to know him.  He was a great man.</p>
+				<p>January 20, 2013 - I am grateful for my Grandma's birthday today.  She is 80 years old now and still going strong.  She is my favorite person in the world.</p>
+			</li>
+		</ul>
+			
+		<ul data-role="listview">
+			<li data-role="list-divider" class="liLabels">By DAY</li>
+			<li data theme="a" class="liLabels">
+				<p>February 3, 2013 - I love to go for spontaneous car rides and do fun things.  I am grateful for a husband who loves this too.</p>
+				<p>January 3, 2013 - I am grateful for my family and all the joy they bring to me.  I am blessed.</p>
+			</li>
+		</ul>
+	
+		<ul data-role="listview">
+			<li data-role="list-divider" class="liLabels">By YEAR</li>
+			<li data theme="a" class="liLabels">
+				<h3>2013</h3>
+				<p>February 14, 2013 - Hey...it's Valentine's day again!  Yay!  I am grateful for all teh people in my life that love me.</p>
+				<h3>2012</h3>
+				<p>February 14, 2012 - It's Valentine's day!  Yay!  I am grateful for all teh people in my life that love me.</p>
+			</li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  WHAT I'M GRATEFUL FOR PAGE-->
+    
+	<div data-role="page" id="gratefulfor" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content">
+		<h3 data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search By Keyword" data-inset="false">All my Gratitudes</h3>
+		<p>This will be a place to search through all gratitudes.</p>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  COLOR PAGE-->
+    
+	<div data-role="page" id="color" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="b">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="FIND GRATITUDES" data-inset="false">
+		    <li data-role="list-divider" class="browseListDivider">WHAT COLOR DO YOU LIKE BEST TODAY?:</li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Yellow.png" alt="Yellow Heart Icon">YELLOW</a></li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Pink.png" alt="Pink Heart Icon">PINK</a></li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Blue.png" alt="Blue Heart Icon">BLUE</a></li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Green.png" alt="Green Heart Icon">GREEN</a></li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Red.png" alt="Red Heart Icon">RED</a></li>
+		    <li data-theme="d"><a href="404.html"><img src="img/Orange.png" alt="Orange Heart Icon">ORANGE</a></li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--  items page-->
+    
+	<div data-role="page" id="items" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="b">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="FIND GRATITUDES" data-inset="false">
+		    <li data-role="list-divider" class="browseListDivider">Browse by ITEMS:</li>
+		    <li data-theme="a"><a href="404.html"><img src="images/flowers.png" alt="flower art">FLOWERS</a></li>
+		    <li data-theme="a"><a href="404.html"><img src="images/sunshine.png" alt="sunshine art">SUNSHINE</a></li>
+		    <li data-theme="a"><a href="404.html"><img src="images/stars.png" alt="stars art">STARS</a></li>
+		    <li data-theme="a"><a href="404.html"><img src="images/moon.png" alt="moon art">MOON</a></li>
+		    <li data-theme="a"><a href="404.html"><img src="images/grass.png" alt="grass art">GRASS</a></li>
+		    <li data-theme="a"><a href="404.html"><img src="images/birds.png" alt="birds art">BIRDS</a></li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+	        <div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+    
+    <!--attitude rate page-->
+    
+	<div data-role="page" id="rating" data-add-back-btn="true" data-theme="a">
+	    <div data-role="header" data-position="fixed">
+		<h1><a href=#gohome><img src="images/heading.png" alt="An Attitude of Gratitude Title"></a></h1>
+	    </div>
+	
+	    <div data-role="content" data-theme="a" id="ratingpart">
+		<ul data-role="listview" data-filter="true" data-divider-theme="a" data-filter-placeholder="Search Ratings" data-inset="false">
+		    <li data-role="list-divider" class="browseListDivider">Browse by Gratitude Ratings:</li>
+		    <li><a href="404.html"><img src="images/10to6.png" alt="top ratings" id="topRatings">HIGHEST RATED<br><br><p>10 TO 6</p></a></li>
+		    <li><a href="404.html"><img src="images/5to0.png" alt="lowest ratings" id="lowestRatings">LOWEST RATED<br><br><p>5 TO 0</p></a></li>
+		</ul>
+	    </div>
+	
+	    <div data-role="footer" data-position="fixed" data-id="thisfooter">
+		<div data-role="navbar" data-iconpos="top">
+		    <ul>
+			<li><a href="#gohome" data-icon="gohome" class="ui-btn-active ui-state-persist">Home</a></li>
+			<li><a href="#about" data-icon="info">About</a></li>
+			<li><a href="#mygrats" data-icon="star">My Grats</a></li>
+		    </ul>
+		</div>
+	    </div>
+	</div>
+	    
+	    <!--ERROR PAGE-->
+    
+	<div data-role="dialog" id="addGratErrors" data-theme="a">
+	
+	    <div data-role="header" data-position="fixed">
+	        <h1>OOPS!</h1>
+		<p>You are missing some</p>
+		<p>required fields...</p>
+	    </div>
+	
+	    <div data-role="content">
+		<ul>
+		    <li>TEST</li>
+		</ul>
+	    </div>
+	
+	</div>
+
+	<!-- JavaScript under here -->
+	
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/JSON.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+
+</body>
+</html>
+            
