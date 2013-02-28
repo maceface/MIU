@@ -1,1 +1,109 @@
+body {
+	font-family: "Helvetica", Arial, sans-serif;
+}
+
+#gohome {
+	text-align: center;
+	background-image: url("../img/deepbackground.png");
+}
+
+img.headerimage {
+	margin: 5px 0px 0px 0px
+}
+
+img#cta.cta {
+	margin: 0px;
+}
+
+img {
+	text-align: center;
+	margin: 0px 0px 0px 50px
+}
+
+img.ui-li-thumb {
+	margin: 19px;
+}
+
+img#iI {
+	margin: 0px;
+}
+
+a.pageNames.ui-link-inherit {
+	text-shadow: 1px 3px 1px #086273;
+	margin: 0px
+}
+
+p.pageInfo {
+	font-size: larger;
+	color: #3e568d;
+	background-color: transparent;
+	
+}
+
+div.ui-btn-text {
+	margin: -5px
+}
+
+/*#gohome img {
+	max-width: 500px;
+}*/
+
+/*--#addItem {
+	background-image: url("../img/deepbackground.png");
+}*/
+
+#addItem .ui-content {
+	background-image: url(../img/deepbackground.png);
+}
+
+#addItem .ui-body {
+	color: #224754
+}
+
+/*text*/
+#addItem .ui-field-contain {
+	color: #23a7b3
+}
+
+#formDate {
+	color: rgba(144,189,244,0.65);
+}
+
+#formTime {
+	color: rgba(144,189,244,0.65);
+}
+
+#gratWhat {
+	color: rgba(144,189,244,0.65);
+}
+
+#about .ui-content.ui-body-c {
+	background-image: url(../img/deepbackground.png);
+}
+
+#author .ui-content.ui-body-c {
+	margin: 0px;
+	background-image: url(../img/deepbackground.png);
+}
+
+img#author {
+	margin: 0px;
+}
+
+img#mygratsimage {
+	margin: 0px;
+}
+
+img#info {
+	margin: 0px;
+}
+
+img#github {
+	margin: 0px;
+}
+
+img#credits {
+	margin: 0px;
+}
+
 label.error{display:block; margin:10px 0; color:#cc0000;}
